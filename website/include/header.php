@@ -49,4 +49,4 @@
 
 		<?php } ?>
 	</div>
-	<h1>IT 5236</h1>
+	<h1>Hair Care</h1>

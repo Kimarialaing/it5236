@@ -18,7 +18,7 @@ $errors = array();
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
 	if (isset($_GET['id'])) {
-		
+
 		$success = $app->processEmailValidation($_GET['id'], $errors);
 		if ($success) {
 			$message = "Email address validated. You may login.";
@@ -66,7 +66,7 @@ if (isset($_GET['register']) && $_GET['register']== 'success') {
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<!--1. Display Errors if any exists 
+<!--1. Display Errors if any exists
 	2. Display Login form (sticky):  Username and Password -->
 
 <body>
@@ -75,17 +75,18 @@ if (isset($_GET['register']) && $_GET['register']== 'success') {
 	<h2>Login</h2>
 
 	<?php include('include/messages.php'); ?>
-	
+
 	<div>
-		<form method="post" action="login.php">
-			
+		<form method="post" id="Form" action="login.php">
+
 			<input type="text" name="username" id="username" placeholder="Username" value="<?php echo $username; ?>" />
 			<br/>
 
 			<input type="password" name="password" id="password" placeholder="Password" value="<?php echo $password; ?>" />
 			<br/>
+			<input type="checkbox" id="saveLocal"> Remember Username?
 
-			<input type="submit" value="Login" name="login" />
+			<input type="submit" id="submit" value="Login" name="login" />
 		</form>
 	</div>
 	<a href="register.php">Need to create an account?</a>
